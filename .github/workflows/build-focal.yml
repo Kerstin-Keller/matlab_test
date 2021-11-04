@@ -1,4 +1,4 @@
-name: Build Windows Server 2019
+name: Build Ubuntu 20.04
 
 on:  
   push:
@@ -24,7 +24,7 @@ jobs:
           mkdir "${{ runner.workspace }}\_build"
           cd "${{ runner.workspace }}\_build"
           
-          cmake %GITHUB_WORKSPACE% -G "Ninja" -DCMAKE_INSTALL_PREFIX=_install
+          cmake $GITHUB_WORKSPACE -G "Ninja" -DCMAKE_INSTALL_PREFIX=_install
           cmake --build .
           cmake --build . --target install
         shell: bash
