@@ -1,4 +1,4 @@
-name: Build Ubuntu 20.04
+name: Build Ubuntu
 
 on:  
   push:
@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: Install Dependencies
-      run: |
-        sudo apt update
-        sudo apt-get install ninja-build
+      - name: Install Dependencies
+        run: |
+          sudo apt update
+          sudo apt-get install ninja-build
         
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1
