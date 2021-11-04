@@ -1,4 +1,4 @@
-name: Build Ubuntu
+name: Build Ubuntu 
 
 on:  
   push:
@@ -7,7 +7,7 @@ on:
       - master
 
 jobs:
-  build-windows:
+  build-ubuntu:
     runs-on: ubuntu-20.04
 
     steps:
@@ -34,7 +34,7 @@ jobs:
           cmake --build . --target install
         shell: bash
         
-      - name: Upload Windows setup
+      - name: Upload Ubuntu setup
         uses: actions/upload-artifact@v2
         with:
           name: ubuntu-setup
